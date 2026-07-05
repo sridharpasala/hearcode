@@ -1,0 +1,26 @@
+# Changelog
+
+All notable changes to HearCode are documented here. The format follows
+[Keep a Changelog](https://keepachangelog.com/), and the project uses
+[Semantic Versioning](https://semver.org/).
+
+## [0.1.0] — 2026-07-05
+
+Initial public release. **Hear your coding agent work** — an adaptive soundtrack
+that reflects what Claude Code (or any hook-capable agent) is doing.
+
+### Added
+- Adaptive mood bed (explore / build / action / tension / error) with intensity scaling.
+- Per-tool leitmotifs; "agent needs you" spoken alerts (macOS `say`).
+- Build-health harmony (tests green/red) and stuck-loop detection.
+- Themes (`focus`, `uplift`) and ambience (`low_warm`, `open_fifths`, `detuned_soft`,
+  `airy`, `classic`) — both switchable live.
+- macOS menu bar app; session recap + shareable waveform poster (SVG).
+- Drive from any agent via a local `POST /event`; one-command `hearcode init`;
+  full removal via `hearcode uninstall --purge`.
+
+### Security / robustness
+- HTTP server binds `127.0.0.1` only; POST bodies capped (413 over 64 KB).
+- Soft-knee audio limiter, concurrent-accent cap, and `HEARCODE_VOLUME` ceiling.
+
+[0.1.0]: https://github.com/sridharpasala/hearcode/releases/tag/v0.1.0

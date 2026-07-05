@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.hearcode-backup
+
+# build artifacts
+dist/
+build/
+*.egg-info/
+
+# generated stem packs — synthesized on first run into ~/.hearcode, or locally
+# via `python tools/gen_stems.py`; never committed.
+assets/loops/**/*.wav

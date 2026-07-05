@@ -1,0 +1,29 @@
+{
+  "_comment": "Reference snippet. `hearcode install` merges this into ~/.claude/settings.json. Each hook forwards its JSON payload to the running daemon via curl (no Python startup on the hot path; a short timeout means a stopped daemon never slows the agent). Note: Stop does not support a matcher, so it is registered without one.",
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "PostToolUseFailure": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "SubagentStop": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "Notification": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "PermissionDenied": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ],
+    "SessionStart": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "curl -sf --max-time 0.25 -X POST http://127.0.0.1:8420/event --data-binary @- >/dev/null 2>&1 || true" } ] }
+    ]
+  }
+}

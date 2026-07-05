@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hearcode"
+dynamic = ["version"]
+description = "An adaptive soundtrack for coding agents — Claude Code's live, in-terminal score."
+readme = "README.md"
+# Python 3.14 currently has no prebuilt audio wheels (sounddevice/PortAudio),
+# so HearCode targets 3.13. Bump the upper bound once 3.14 wheels land.
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Sridhar Pasala", email = "pasala.sridhar@gmail.com" }]
+keywords = ["claude-code", "agents", "ambient", "adaptive-music", "developer-tools", "hooks"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "numpy>=1.26",
+    "sounddevice>=0.4",
+]
+
+[project.optional-dependencies]
+# The macOS menu bar app (`hearcode menu`). Optional so the core install stays
+# lean and cross-platform; rumps is macOS-only.
+menubar = ["rumps>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/sridharpasala/hearcode"
+Repository = "https://github.com/sridharpasala/hearcode.git"
+Issues = "https://github.com/sridharpasala/hearcode/issues"
+
+[project.scripts]
+hearcode = "hearcode.cli:main"
+
+[tool.hatch.version]
+path = "hearcode/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+# Ship only the importable package. Stems are synthesized into a user dir on
+# first run (see hearcode/adapters/mixer/stem_pack.py), so no .wav assets are
+# bundled and the wheel stays tiny.
+packages = ["hearcode"]
+
+[tool.hatch.build.targets.sdist]
+# The sdist keeps the dev-facing extras the wheel omits.
+include = [
+    "hearcode/",
+    "tools/",
+    "README.md",
+    "ARCHITECTURE.md",
+    "INTEGRATE.md",
+    "LICENSE",
+    "requirements.txt",
+    "hooks.json",
+]
