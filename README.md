@@ -15,7 +15,7 @@ It's video-game adaptive music for your terminal: a handful of looping stems tha
 crossfade in and out based on a live stream of the agent's tool calls.
 
 <p align="center">
-  <img src="docs/recap-example.svg" alt="HearCode session recap poster — a waveform coloured by the agent's mood, with markers where it erred, got stuck, or needed you" width="840">
+  <img src="https://raw.githubusercontent.com/sridharpasala/hearcode/main/docs/recap-example.svg" alt="HearCode session recap poster — a waveform coloured by the agent's mood, with markers where it erred, got stuck, or needed you" width="840">
   <br>
   <sub><em>Every session becomes a shareable poster — a waveform coloured by what the agent was doing
   (blue exploring · green building · amber running · red erroring), with markers where it got stuck or needed you.</em></sub>
