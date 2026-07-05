@@ -1,5 +1,6 @@
 # HearCode 🎵
 
+[![PyPI](https://img.shields.io/pypi/v/hearcode.svg)](https://pypi.org/project/hearcode/)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)
 ![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
@@ -191,7 +192,7 @@ uv tool install hearcode       # or: pipx install hearcode
 HearCode pins **Python 3.13** (3.14 has no audio wheels yet); uv/pipx pick a
 matching interpreter for you.
 
-> **Pre-release:** not on PyPI yet — until the first release, install from source:
+> **From source** (for development):
 >
 > ```bash
 > git clone https://github.com/sridharpasala/hearcode && cd hearcode
