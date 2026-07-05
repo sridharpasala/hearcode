@@ -4,6 +4,13 @@ All notable changes to HearCode are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/), and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] — 2026-07-05
+
+### Fixed
+- `hearcode doctor` hardcoded "needs ≥ 3.13" and reported a failing ✗ on Python
+  3.10–3.12 even though those are supported. Align the check with the real floor
+  (≥ 3.10).
+
 ## [0.1.1] — 2026-07-05
 
 ### Changed
@@ -30,5 +37,6 @@ that reflects what Claude Code (or any hook-capable agent) is doing.
 - HTTP server binds `127.0.0.1` only; POST bodies capped (413 over 64 KB).
 - Soft-knee audio limiter, concurrent-accent cap, and `HEARCODE_VOLUME` ceiling.
 
+[0.1.2]: https://github.com/sridharpasala/hearcode/releases/tag/v0.1.2
 [0.1.1]: https://github.com/sridharpasala/hearcode/releases/tag/v0.1.1
 [0.1.0]: https://github.com/sridharpasala/hearcode/releases/tag/v0.1.0

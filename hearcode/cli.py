@@ -496,7 +496,7 @@ def _cmd_doctor(args: argparse.Namespace) -> int:
     checks: list[tuple[bool, str]] = []
 
     py = sys.version_info
-    checks.append((py[:2] >= (3, 13), f"Python {py.major}.{py.minor} (needs ≥ 3.13)"))
+    checks.append((py[:2] >= (3, 10), f"Python {py.major}.{py.minor} (needs ≥ 3.10)"))
 
     try:
         import sounddevice as sd
