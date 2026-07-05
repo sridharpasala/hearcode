@@ -7,9 +7,9 @@ name = "hearcode"
 dynamic = ["version"]
 description = "An adaptive soundtrack for coding agents — Claude Code's live, in-terminal score."
 readme = "README.md"
-# Python 3.14 currently has no prebuilt audio wheels (sounddevice/PortAudio),
-# so HearCode targets 3.13. Bump the upper bound once 3.14 wheels land.
-requires-python = ">=3.13"
+# Runs on 3.10–3.13 (verified). Note: 3.14 may lack prebuilt audio wheels
+# (sounddevice/PortAudio) until they land upstream.
+requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Sridhar Pasala", email = "pasala.sridhar@gmail.com" }]
@@ -19,6 +19,9 @@ classifiers = [
     "Environment :: Console",
     "Intended Audience :: Developers",
     "Operating System :: MacOS",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Multimedia :: Sound/Audio",
     "Topic :: Software Development",

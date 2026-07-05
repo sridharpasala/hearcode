@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/hearcode.svg)](https://pypi.org/project/hearcode/)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 ![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 
 **An adaptive soundtrack for coding agents.** While Claude Code (or any agent
@@ -189,8 +189,8 @@ puts `hearcode` on your PATH:
 uv tool install hearcode       # or: pipx install hearcode
 ```
 
-HearCode pins **Python 3.13** (3.14 has no audio wheels yet); uv/pipx pick a
-matching interpreter for you.
+HearCode needs **Python 3.10 or newer** (3.14 may still lack audio wheels);
+uv/pipx pick a matching interpreter for you.
 
 > **From source** (for development):
 >

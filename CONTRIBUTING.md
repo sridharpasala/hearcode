@@ -18,14 +18,14 @@ are much easier to review and land than large ones.
 
 ## Dev setup
 
-> **Use Python 3.13 — not 3.14.** Python 3.14 currently has no prebuilt
-> `sounddevice` / PortAudio wheels, so HearCode targets 3.13 (see `requires-python`
-> in `pyproject.toml`). On 3.14 the audio dependency won't install.
+> **Python 3.10–3.13** (verified). Avoid 3.14 for now — it may still lack
+> prebuilt `sounddevice` / PortAudio wheels, so the audio dependency won't
+> install there yet.
 
-Clone the repo and create a 3.13 virtualenv with an editable install:
+Clone the repo and create a virtualenv with an editable install:
 
 ```bash
-python3.13 -m venv .venv
+python3 -m venv .venv        # any Python 3.10+
 .venv/bin/pip install -e '.[menubar]'
 ```
 

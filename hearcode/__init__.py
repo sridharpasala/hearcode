@@ -7,4 +7,4 @@ Architecture (Clean Architecture, dependencies point inward):
     infrastructure/ Layer 4 — config, DI container, HTTP server, hook installer
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
